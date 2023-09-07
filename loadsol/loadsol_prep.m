@@ -1,0 +1,19 @@
+clear
+%history -c
+clc
+
+functionspath = addpath(genpath('C:\Users\jpeic\OneDrive\Documents\A_University\M_Rehatechnik\A_Masterarbeit\Code\loadsol')); %functionspath
+
+cd ('C:\Users\jpeic\OneDrive\Documents\A_University\M_Rehatechnik\A_Masterarbeit\Pilot_Study\Pilot_Alex\Insoles'); %datapath
+
+a = dir(pwd);
+
+[soles, cell2, raw2] = loadsol_open('PVR_2ASCII_23-06-02 10-36-42-539.txt','PVR_2'); %varargin as Proband names
+
+for i = 4:numel(a)
+    zelleInErsterSpalte = a(i).name;
+    [soles, cell2, raw2] = loadsol_open(zelleInErsterSpalte, 'PVR_2', soles);
+    fprintf('Zelle in der ersten Spalte: %s\n', zelleInErsterSpalte);
+end
+
+
