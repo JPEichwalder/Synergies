@@ -8,12 +8,14 @@ cd ('C:\Users\jpeic\OneDrive\Documents\A_University\M_Rehatechnik\A_Masterarbeit
 
 a = dir(pwd);
 
-[soles, cell2, raw2] = loadsol_open('PVR_2ASCII_23-06-02 10-36-42-539.txt','PVR_2'); %varargin as Proband names
+[soles, cell2, raw2] = loadsol_open('PVR_2ASCII_23-06-02 10-36-42-539.txt','PVR_2');
 
 for i = 4:numel(a)
     zelleInErsterSpalte = a(i).name;
     [soles, cell2, raw2] = loadsol_open(zelleInErsterSpalte, 'PVR_2', soles);
     fprintf('Zelle in der ersten Spalte: %s\n', zelleInErsterSpalte);
 end
+%%
+safepath = ('C:\Users\jpeic\OneDrive\Documents\A_University\M_Rehatechnik\A_Masterarbeit\Code\Synergies\loadsol\soles.mat');
 
-
+save(safepath, 'soles');
