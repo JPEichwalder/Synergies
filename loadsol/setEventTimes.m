@@ -55,18 +55,17 @@ function c3devents = setEventTimes(c3dfile, evtime, label, context, varargin);
   
   c3dfile.parameters.EVENT.TIMES.DATA(2,exiev+1:allev)      = evtime;
   c3dfile.parameters.EVENT.USED.DATA                        = allev;
-  c3dfile.parameters.EVENT.CONTEXTS.DATA(exiev+1:allev)     = context;
+  c3dfile.parameters.EVENT.CONTEXTS.DATA(exiev+1:allev)     = {context};
   c3dfile.parameters.EVENT.ICON_IDS.DATA(exiev+1:allev)     = iconID;
-  c3dfile.parameters.EVENT.LABELS.DATA(exiev+1:allev)       = label;
-  c3dfile.parameters.EVENT.DESCRIPTIONS.DATA(exiev+1:allev) = descri;
-  c3dfile.parameters.EVENT.SUBJECTS.DATA(exiev+1:allev)     = c3dfile.parameters.SUBJECTS.NAMES.DATA{1};
+  c3dfile.parameters.EVENT.LABELS.DATA(exiev+1:allev)       = {label};
+  c3dfile.parameters.EVENT.DESCRIPTIONS.DATA(exiev+1:allev) = {descri};
+  c3dfile.parameters.EVENT.SUBJECTS.DATA(exiev+1:allev)     = {c3dfile.parameters.SUBJECTS.NAMES.DATA{1}};
   c3dfile.parameters.EVENT.GENERIC_FLAGS.DATA                = [];
   
   c3devents = c3dfile;
   
 end%function
 
-  %Paul Kaufmann
   
   
   
