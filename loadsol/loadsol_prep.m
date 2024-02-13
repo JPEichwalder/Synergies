@@ -1,21 +1,20 @@
-clear
-%history -c
-clc
-
+clear;
 functionspath = addpath(genpath('C:\Users\jpeic\OneDrive\Documents\A_University\M_Rehatechnik\A_Masterarbeit\Code\loadsol')); %functionspath
-
-cd ('C:\Users\jpeic\OneDrive\Documents\A_University\M_Rehatechnik\A_Masterarbeit\Pilot_Study\Pilot_Alex\Insoles'); %datapath
-
+cd ('D:\VR_Synergy\RecordingData\VAP_13\loadsole'); %datapath
 a = dir(pwd);
 
-[soles, cell2, raw2] = loadsol_open('PVR_2ASCII_23-06-02 10-36-42-539.txt','PVR_2');
+j = {a(3).name};
+disp(j{1});
+
+[soles, cell2, raw2] = loadsol_open('VAP_13ASCII_23-10-23 18-06-21-899.txt','VAP_13');
 
 for i = 4:numel(a)
     zelleInErsterSpalte = a(i).name;
-    [soles, cell2, raw2] = loadsol_open(zelleInErsterSpalte, 'PVR_2', soles);
+    [soles, cell2, raw2] = loadsol_open(zelleInErsterSpalte, 'VAP_13', soles);
     fprintf('Zelle in der ersten Spalte: %s\n', zelleInErsterSpalte);
 end
-%%
-safepath = ('C:\Users\jpeic\OneDrive\Documents\A_University\M_Rehatechnik\A_Masterarbeit\Code\Synergies\loadsol\soles.mat');
 
+safepath = ('D:\VR_Synergy\RecordingData\VAP_13\loadsole\soles');
 save(safepath, 'soles');
+
+fprintf('Michi.ENDE');

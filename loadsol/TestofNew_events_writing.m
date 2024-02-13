@@ -26,7 +26,7 @@ for prb = 1:nr_prb
     nr_strl = length(soletrials);
 
     for strl = 1:nr_strl
-        [solesevents.(proband).(soletrials{strl}).con, solesevents.(proband).(soletrials{strl}).off, nozeros] = det_contacts(soles.(proband).(soletrials{strl}), 'R_total', 'gen_th', 30, 'min_cycle', 200, 'max_cycle', 10000, 'transmission_error', 2, 'cycle_th', 100);
+        [solesevents.(proband).(soletrials{strl}).con, solesevents.(proband).(soletrials{strl}).off, nozeros] = det_contacts(soles.(proband).(soletrials{strl}), 'L_total', 'gen_th', 30, 'min_cycle', 200, 'max_cycle', 10000, 'transmission_error', 2, 'cycle_th', 100);
     end
 
     cd([data_folder, proband, '/c3d']); % Folder with raw c3d files

@@ -4,5 +4,5 @@ function [points_frameRate, points_firstFrame, points_lastFrame] = pointsInfo(da
   points_lastFrame=dataSet.header.points.lastFrame;
 end%function
 
-%Author: Kaufmann Paul
+%Author: Johannes Eichwalder
 % gets frame Rate, first and last Frame of the points, from a c3d file obend with ezc3d read

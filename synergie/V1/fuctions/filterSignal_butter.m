@@ -1,9 +1,9 @@
 function filtered_signal = filterSignal_butter(signal, type, frameRate, varargin)
 
-##filters sgnal with a butterworth filter
-##required input arguments: signal (that should be filtered); type (filtertype: low/high/stop/bandpass); frameRate (of the signal)
-##optional input arguments: order (filter order); cutoff (cutoff frequenzy; one value for high and low, vector with two values for stop and bandpass)
-##for octave: load signal pkg (pkg load signal) for butter and filtfilt functions
+%filters sgnal with a butterworth filter
+%required input arguments: signal (that should be filtered); type (filtertype: low/high/stop/bandpass); frameRate (of the signal)
+%optional input arguments: order (filter order); cutoff (cutoff frequenzy; one value for high and low, vector with two values for stop and bandpass)
+%for octave: load signal pkg (pkg load signal) for butter and filtfilt functions
 order = 4; %default filter order
 %default cutoff frequenzies for filter types (please define frequenzies for type 'stop')
 switch type

@@ -20,4 +20,4 @@ function [event_times]= getEventTimes(dataSet, term, context, row) %dataSet...c3
   event_times= nonzeros(event_times_with_zeros)'; %clears the zeros, so only the times of the Foot Strike are in the matrix, with the first starting at (1,1), row style
 end%function
 
-%Author: Kaufmann Paul
+%Author: Johannes Eichwalder

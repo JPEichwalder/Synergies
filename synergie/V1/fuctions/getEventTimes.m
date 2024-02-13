@@ -3,6 +3,10 @@ function [event_times]= getEventTimes(dataSet, term, context, row) %dataSet...c3
  event_contexts = dataSet.parameters.EVENT.CONTEXTS.DATA'; %gets the labels contexts (f.ex.: general, right, left)
  event_times_raw= dataSet.parameters.EVENT.TIMES.DATA(row,:); %gets the file with the times (correct row)
  
+if size (event_labels,1) > 1 %if new
+    event_labels = event_labels';
+end
+
  for i=1:length(event_labels)
     switch (event_contexts{i})
       case context

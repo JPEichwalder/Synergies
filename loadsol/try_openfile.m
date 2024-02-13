@@ -4,7 +4,7 @@ clc
 
 functionspath = addpath(genpath('C:\Users\jpeic\OneDrive\Documents\A_University\M_Rehatechnik\Masterarbeit\Code\')); %functionspath
 
-cd ('D:\masterarbeit\try_elias'); %datapath
+cd ('D:\masterarbeit'); %datapath
 
     
 [soles, cell2, raw2] = loadsol_open('line_01.txt');
